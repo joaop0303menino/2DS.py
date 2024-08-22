@@ -2,8 +2,6 @@ correta = ["p","y","t","h","o","n"]
 
 errada = ["#","#","#","#","#","#"]
 
-letter_correct = []
-
 def jogo():
     
     for j in range(10):
@@ -12,12 +10,11 @@ def jogo():
 
         for i in range(len(correta)):
             if letter == correta[i]:
-                print(letter_correct)
-                letter_correct.append(letter)
-            else:
-                print(errada[i])
+                errada[i] = correta[i]
+                
+                print(errada)
         
-    if letter_correct == correta:
+    if errada == correta:
         print(correta)
         print("Parabéns você ganhou o jogo ")
         
