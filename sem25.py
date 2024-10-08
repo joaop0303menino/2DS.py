@@ -24,3 +24,30 @@ def ver(estoque):
         print(f"produto: {i + 1}°\n quantidade: {quantidade}")
 
 ver(estoque)
+
+
+
+def reserva(assentos,fileira,assento):
+    if 0 <= fileira < len(assentos) and 0 <= assento < len(assentos[0]):
+        if assentos[fileira][assento] == 0:
+            assentos[fileira][assento] = 1
+            print(f"reservado {fileira + 1}: {assento + 1}")
+        else:
+            print("ja esta reservado")
+    else:
+        print("erro")
+        
+def cancelar(assentos,fileira,assento):
+    if 0 <= fileira < len(assentos) and 0 <= assento < len(assentos[0]):
+        if assentos[fileira][assento] == 1:
+            assentos[fileira][assento] = 0
+            print(f"reserva cancelada {fileira + 1}: {assento + 1}")
+        else:
+            print("não esta reservado")
+    else:
+        print("erro")
+        
+def ver(assentos):
+    for i, fileira in enumerate(estoque):
+        print(f"fileira: {i + 1}" + " " .join(str(assento) for assento in fileira))
+        
